@@ -1,6 +1,6 @@
 return {
   {
-    "nvim-treesitter/nvim-treesitter", 
+    "nvim-treesitter/nvim-treesitter",
     config = function()
       require("plugins.config.treesitter")
     end,
