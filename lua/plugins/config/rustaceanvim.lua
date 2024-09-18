@@ -22,6 +22,13 @@ vim.g.rustaceanvim = {
         end,
         bufnr_opts
       )
+      map(
+        "n", "<Leader>ca",
+        function()
+          vim.cmd.RustLsp({"codeAction"})
+        end,
+        bufnr_opts
+      )
     end,
     default_settings = {
       -- rust-analyzer language server configuration

@@ -21,7 +21,7 @@ map("n", "<Esc>", "<Cmd>noh<CR>", opts)
 map("n", "<Leader>x", "<Cmd>bd<CR>", opts)
 
 -- Save session
-map("n", "<Leader>ss", "<Cmd>mksession! ~/session.vim<CR>")
+map("n", "<Leader>ss", "<Cmd>mksession! ~/.session.vim<CR>")
 
 -- Load session
-map("n", "<Leader>sl", "<Cmd>source ~/session.vim<CR>")
+map("n", "<Leader>sl", "<Cmd>source ~/.session.vim<CR>")
