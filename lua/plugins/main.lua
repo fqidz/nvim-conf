@@ -63,5 +63,9 @@ return {
     config = function()
       require("plugins.config.rustaceanvim")
     end,
-  }
+  },
+  {
+    "mfussenegger/nvim-jdtls",
+    version = "0.2.0",
+  },
 }
