@@ -68,4 +68,13 @@ return {
     "mfussenegger/nvim-jdtls",
     version = "0.2.0",
   },
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
+    config = true,
+  }
 }
