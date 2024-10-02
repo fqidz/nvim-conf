@@ -5,6 +5,8 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 map("n", "<Leader>da", vim.diagnostic.open_float , opts)
+map("n", "<Leader>ca", vim.lsp.buf.code_action , opts)
+map("v", "<Leader>ca", vim.lsp.buf.code_action , opts)
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 vim.api.nvim_clear_autocmds({ group = augroup })
