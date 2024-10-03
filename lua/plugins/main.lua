@@ -76,5 +76,12 @@ return {
       "stevearc/dressing.nvim",
     },
     config = true,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    dir = "~/.local/share/nvim/nix/markdown-preview-nvim/",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   }
 }
