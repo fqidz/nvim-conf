@@ -83,5 +83,39 @@ return {
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+    config = function()
+      require("plugins.config.markdown-preview")
+    end,
   },
+  {
+    "ibhagwan/fzf-lua",
+    config = function()
+      require("fzf-lua").setup({"telescope"})
+    end,
+  },
+  {
+    "gennaro-tedesco/nvim-possession",
+    dependencies = {
+      "ibhagwan/fzf-lua",
+    },
+    init = function()
+      local possession = require("nvim-possession")
+
+      vim.keymap.set("n", "<leader>sl", function()
+        possession.list()
+      end)
+      vim.keymap.set("n", "<leader>sn", function()
+        possession.new()
+      end)
+      vim.keymap.set("n", "<leader>ss", function()
+        possession.update()
+      end)
+      vim.keymap.set("n", "<leader>sd", function()
+        possession.delete()
+      end)
+    end,
+    config = function()
+      require("plugins.config.possession")
+    end
+  }
 }

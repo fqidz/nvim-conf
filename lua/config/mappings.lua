@@ -19,9 +19,3 @@ map("n", "<Esc>", "<Cmd>noh<CR>", opts)
 
 -- Close current buffer
 map("n", "<Leader>x", "<Cmd>bd<CR>", opts)
-
--- Save session
-map("n", "<Leader>ss", "<Cmd>mksession! ~/.session.vim<CR>")
-
--- Load session
-map("n", "<Leader>sl", "<Cmd>source ~/.session.vim<CR>")
