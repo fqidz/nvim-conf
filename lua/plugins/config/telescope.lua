@@ -1,5 +1,11 @@
 local builtin = require('telescope.builtin')
 
+require("telescope").setup({
+  defaults = {
+    initial_mode = "normal",
+  },
+})
+
 vim.keymap.set(
   'n',
   '<leader>ff',

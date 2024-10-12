@@ -10,7 +10,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    lazy = false,
+   lazy = false,
     config = function()
       require("plugins.config.lspconfig")
     end,
@@ -88,34 +88,12 @@ return {
     end,
   },
   {
-    "ibhagwan/fzf-lua",
+    "Shatur/neovim-session-manager",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
     config = function()
-      require("fzf-lua").setup({"telescope"})
+      require("plugins.config.session-manager")
     end,
   },
-  {
-    "gennaro-tedesco/nvim-possession",
-    dependencies = {
-      "ibhagwan/fzf-lua",
-    },
-    init = function()
-      local possession = require("nvim-possession")
-
-      vim.keymap.set("n", "<leader>sl", function()
-        possession.list()
-      end)
-      vim.keymap.set("n", "<leader>sn", function()
-        possession.new()
-      end)
-      vim.keymap.set("n", "<leader>ss", function()
-        possession.update()
-      end)
-      vim.keymap.set("n", "<leader>sd", function()
-        possession.delete()
-      end)
-    end,
-    config = function()
-      require("plugins.config.possession")
-    end
-  }
 }
