@@ -14,5 +14,5 @@ vim.g.mkdp_combine_preview = 1
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-map("n", "<C-s>", "<Cmd>MarkdownPreviewToggle<CR>", opts)
+map("n", "<C-s>", "<Cmd>MarkdownPreview<CR>", opts)
 

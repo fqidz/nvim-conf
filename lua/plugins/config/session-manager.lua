@@ -19,3 +19,4 @@ require('session_manager').setup({
 
 vim.keymap.set("n", "<Leader>sl", "<Cmd>SessionManager load_session<CR>")
 vim.keymap.set("n", "<Leader>ss", "<Cmd>SessionManager save_current_session<CR>")
+vim.keymap.set("n", "<Leader>sd", "<Cmd>SessionManager delete_session<CR>")

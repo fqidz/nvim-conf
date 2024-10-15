@@ -39,7 +39,15 @@ lspconfig.marksman.setup({
 -- lspconfig.tailwindcss.setup({
 --     capabilities = capabilities,
 -- })
---
--- lspconfig.ts_ls.setup({
---     capabilities = capabilities,
--- })
+
+lspconfig.html.setup({
+    capabilities = capabilities,
+})
+
+lspconfig.cssls.setup({
+    capabilities = capabilities,
+})
+
+lspconfig.ts_ls.setup({
+    capabilities = capabilities,
+})
