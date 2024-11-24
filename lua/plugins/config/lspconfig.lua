@@ -3,6 +3,8 @@
 local lspconfig = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+vim.keymap.set("n", "<Leader>ra", vim.lsp.buf.rename)
+
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
   on_init = function(client)

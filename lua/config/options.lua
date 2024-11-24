@@ -1,6 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.lsp.inlay_hint.enable()
+-- vim.lsp.inlay_hint.enable()
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true

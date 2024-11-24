@@ -68,6 +68,8 @@ cmp.setup.cmdline(':', {
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
 local luasnip = require("luasnip")
 
+luasnip.filetype_extend("htmldjango", {"html"})
+
 cmp.setup({
 
   -- ... Your other configuration ...

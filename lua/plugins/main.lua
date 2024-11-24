@@ -40,10 +40,17 @@ return {
     end,
   },
   {
-    "stevearc/oil.nvim",
-    config = function()
-      require("plugins.config.oil")
-    end,
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    keys = {
+      {
+        "-",
+        "<cmd>Yazi<cr>",
+      },
+    },
+    opts = {
+      open_for_directories = true,
+    },
   },
   {
     "numToStr/Comment.nvim",
