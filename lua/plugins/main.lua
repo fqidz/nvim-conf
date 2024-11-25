@@ -50,6 +50,7 @@ return {
     },
     opts = {
       open_for_directories = true,
+      highlight_hovered_buffers_in_same_directory = false,
     },
   },
   {

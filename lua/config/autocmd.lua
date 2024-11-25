@@ -21,3 +21,24 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
       vim.fn.setpos(".", save_cursor)
     end,
 })
+
+-- hide lsp diagnostics when entering insert mode
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+    pattern = {"*"},
+    callback = function()
+      vim.diagnostic.config({
+        virtual_text = false;
+        underline = false;
+      })
+    end,
+})
+
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+    pattern = {"*"},
+    callback = function()
+      vim.diagnostic.config({
+        virtual_text = true;
+        underline = true;
+      })
+    end,
+})

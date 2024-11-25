@@ -5,11 +5,24 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.keymap.set("n", "<Leader>ra", vim.lsp.buf.rename)
 
+-- change the lsp diagnostics from undercurl to underline
+local hl_groups = {
+  'DiagnosticUnderlineOk',
+  'DiagnosticUnderlineError',
+  'DiagnosticUnderlineInfo',
+  'DiagnosticUnderlineHint',
+  'DiagnosticUnderlineWarn'
+}
+for _, hl in ipairs(hl_groups) do
+  vim.cmd.highlight(hl .. ' gui=underline')
+end
+
+
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
-    if vim.uv.fs_stat(path..'/.luarc.json') or vim.uv.fs_stat(path..'/.luarc.jsonc') then
+    if vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc') then
       return
     end
 
@@ -31,11 +44,11 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.nil_ls.setup({
-    capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 lspconfig.marksman.setup({
-    capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 -- lspconfig.tailwindcss.setup({
@@ -43,13 +56,13 @@ lspconfig.marksman.setup({
 -- })
 
 lspconfig.html.setup({
-    capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 lspconfig.cssls.setup({
-    capabilities = capabilities,
+  capabilities = capabilities,
 })
 
 lspconfig.ts_ls.setup({
-    capabilities = capabilities,
+  capabilities = capabilities,
 })

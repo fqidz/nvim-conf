@@ -22,3 +22,10 @@ vim.opt.termguicolors = true
 vim.opt.ignorecase = true
 
 vim.g.mapleader = " "
+
+vim.opt.signcolumn = "yes";
+
+vim.diagnostic.config({
+  update_in_insert = true;
+})
+
