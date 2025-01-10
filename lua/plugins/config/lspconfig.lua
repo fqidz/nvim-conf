@@ -1,7 +1,7 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
 local lspconfig = require("lspconfig")
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 vim.keymap.set("n", "<Leader>ra", vim.lsp.buf.rename)
 
@@ -13,10 +13,10 @@ local hl_groups = {
   'DiagnosticUnderlineHint',
   'DiagnosticUnderlineWarn'
 }
+
 for _, hl in ipairs(hl_groups) do
   vim.cmd.highlight(hl .. ' gui=underline')
 end
-
 
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
@@ -64,5 +64,23 @@ lspconfig.cssls.setup({
 })
 
 lspconfig.ts_ls.setup({
+  capabilities = capabilities,
+})
+
+lspconfig.basedpyright.setup({
+  capabilities = capabilities,
+  settings = {
+    basedpyright = {
+        analysis = {
+            autoSearchPaths = true,
+            typeCheckingMode = "standard",
+            diagnosticMode = "workspace",
+            useLibraryCodeForTypes = true,
+        },
+    }
+  }
+})
+
+lspconfig.ruff.setup({
   capabilities = capabilities,
 })
