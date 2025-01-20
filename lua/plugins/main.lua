@@ -107,13 +107,4 @@ return {
       require("plugins.config.session-manager")
     end,
   },
-  {
-    "sindrets/diffview.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("plugins.config.diffview")
-    end,
-  },
 }
