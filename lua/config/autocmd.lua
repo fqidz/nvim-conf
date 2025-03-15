@@ -9,6 +9,14 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     command = "setlocal filetype=c",
 })
 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    group = augroup("format"),
+    pattern = {"*.h", "*.c"},
+    callback = function()
+      vim.lsp.buf.format({ async = false })
+    end
+})
+
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
     group = augroup("autoupdate"),
     callback = function()
