@@ -56,6 +56,16 @@ lspconfig.clangd.setup({
 lspconfig.marksman.setup({
   capabilities = capabilities,
 })
+lspconfig.texlab.setup({
+  capabilities = capabilities,
+  -- settings = {
+  --   texlab = {
+  --     build = {
+  --       on_save = true;
+  --     },
+  --   },
+  -- },
+})
 
 -- lspconfig.tailwindcss.setup({
 --     capabilities = capabilities,
