@@ -99,6 +99,14 @@ return {
     end,
   },
   {
+    "let-def/texpresso.vim",
+    dir = "~/.local/share/nvim/nix/texpresso-vim/",
+    ft = { "tex" },
+    config = function()
+      require("plugins.config.texpresso")
+    end,
+  },
+  {
     "Shatur/neovim-session-manager",
     dependencies = {
       "nvim-lua/plenary.nvim",
