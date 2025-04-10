@@ -6,6 +6,9 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 vim.keymap.set("n", "<Leader>ra", vim.lsp.buf.rename)
 vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<Leader>da", vim.diagnostic.open_float)
+vim.keymap.set({ "n", "v" }, "<Leader>fa", function()
+  vim.lsp.buf.format({ async = false })
+end)
 
 -- change the lsp diagnostics from undercurl to underline
 local hl_groups = {

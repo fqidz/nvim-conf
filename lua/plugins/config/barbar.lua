@@ -14,4 +14,5 @@ local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
 map('n', '<Tab>', '<Cmd>BufferNext<CR>', opts)
+map('n', '<C-I>', '<C-I>', opts)
 map('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', opts)
