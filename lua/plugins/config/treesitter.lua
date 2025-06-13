@@ -10,6 +10,10 @@ require("nvim-treesitter.configs").setup({
     -- custom
     "rust",
     "python",
+    "html",
+    "htmldjango",
+    "javascript",
+    "jsdoc",
   },
 
   auto_install = true,
@@ -43,3 +47,7 @@ require("nvim-treesitter.configs").setup({
     },
   },
 })
+
+-- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#adding-parsers
+-- permalink: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#adding-parsers
+vim.treesitter.language.register('htmldjango', 'jinja')

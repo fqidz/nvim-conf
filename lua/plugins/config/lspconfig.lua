@@ -61,29 +61,22 @@ lspconfig.marksman.setup({
 })
 lspconfig.texlab.setup({
   capabilities = capabilities,
-  -- settings = {
-  --   texlab = {
-  --     build = {
-  --       on_save = true;
-  --     },
-  --   },
-  -- },
 })
-
--- lspconfig.tailwindcss.setup({
---     capabilities = capabilities,
--- })
 
 lspconfig.html.setup({
   capabilities = capabilities,
+  filetypes = { "html", "templ", "jinja" },
 })
-
 
 lspconfig.cssls.setup({
   capabilities = capabilities,
 })
 
 lspconfig.ts_ls.setup({
+  capabilities = capabilities,
+})
+
+lspconfig.jinja_lsp.setup({
   capabilities = capabilities,
 })
 
@@ -95,12 +88,12 @@ lspconfig.basedpyright.setup({
   capabilities = capabilities,
   settings = {
     basedpyright = {
-        analysis = {
-            autoSearchPaths = true,
-            typeCheckingMode = "standard",
-            diagnosticMode = "workspace",
-            useLibraryCodeForTypes = true,
-        },
+      analysis = {
+        autoSearchPaths = true,
+        typeCheckingMode = "standard",
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true,
+      },
     }
   }
 })

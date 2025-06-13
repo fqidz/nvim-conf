@@ -69,6 +69,7 @@ cmp.setup.cmdline(':', {
 local luasnip = require("luasnip")
 
 luasnip.filetype_extend("htmldjango", {"html"})
+luasnip.filetype_extend("jinja", {"html"})
 
 cmp.setup({
 
