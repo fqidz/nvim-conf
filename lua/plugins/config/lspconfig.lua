@@ -10,19 +10,6 @@ vim.keymap.set({ "n", "v" }, "<Leader>fa", function()
   vim.lsp.buf.format({ async = false })
 end)
 
--- change the lsp diagnostics from undercurl to underline
-local hl_groups = {
-  'DiagnosticUnderlineOk',
-  'DiagnosticUnderlineError',
-  'DiagnosticUnderlineInfo',
-  'DiagnosticUnderlineHint',
-  'DiagnosticUnderlineWarn'
-}
-
-for _, hl in ipairs(hl_groups) do
-  vim.cmd.highlight(hl .. ' gui=underline')
-end
-
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
   on_init = function(client)
