@@ -1,5 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.winborder = "single"
 -- vim.lsp.inlay_hint.enable()
 
 vim.opt.splitbelow = true

@@ -14,7 +14,7 @@ return {
     init = function()
       require("plugins.config.barbar")
     end,
-    opts = { },
+    opts = {},
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -30,5 +30,8 @@ return {
     config = function()
       require("plugins.config.dashboard")
     end,
-  }
+  },
+  {
+    "brenoprata10/nvim-highlight-colors",
+  },
 }

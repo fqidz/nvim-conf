@@ -35,8 +35,28 @@ lspconfig.lua_ls.setup({
   }
 })
 
-lspconfig.nil_ls.setup({
+-- https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#configuration-overview
+lspconfig.nixd.setup({
   capabilities = capabilities,
+  cmd = { "nixd" },
+  settings = {
+    nixd = {
+      nixpkgs = {
+        expr = "import <nixpkgs> { }",
+      },
+      formatting = {
+        command = { "nix fmt" },
+      },
+      options = {
+        nixos = {
+          expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.laptop.options',
+        },
+        home_manager = {
+          expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations."laptop".options.home-manager.users.type.getSubOptions []',
+        },
+      },
+    },
+  },
 })
 
 lspconfig.clangd.setup({

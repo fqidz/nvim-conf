@@ -41,6 +41,9 @@ return {
   },
   {
     "mikavilpas/yazi.nvim",
+    dependencies = {
+      "folke/snacks.nvim",
+    },
     event = "VeryLazy",
     keys = {
       {
@@ -49,9 +52,14 @@ return {
       },
     },
     opts = {
+      use_ya_for_events_reading = true,
+      use_yazi_client_id_flag = true,
       open_for_directories = true,
       highlight_hovered_buffers_in_same_directory = false,
     },
+    init = function()
+      vim.g.loaded_netrwPlugin = 1
+    end
   },
   {
     "numToStr/Comment.nvim",
