@@ -33,13 +33,6 @@ return {
     end,
   },
   {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = function()
-      require("plugins.config.autopairs")
-    end,
-  },
-  {
     "mikavilpas/yazi.nvim",
     dependencies = {
       "folke/snacks.nvim",

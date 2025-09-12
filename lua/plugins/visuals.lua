@@ -24,14 +24,6 @@ return {
     end,
   },
   {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require("plugins.config.dashboard")
-    end,
-  },
-  {
     "brenoprata10/nvim-highlight-colors",
   },
 }
