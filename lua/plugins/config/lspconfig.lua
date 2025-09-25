@@ -1,6 +1,5 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
-local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 vim.keymap.set("n", "<Leader>ra", vim.lsp.buf.rename)
@@ -10,7 +9,10 @@ vim.keymap.set({ "n", "v" }, "<Leader>fa", function()
   vim.lsp.buf.format({ async = false })
 end)
 
-lspconfig.lua_ls.setup({
+vim.lsp.enable({ "luals", "nixd", "clangd", "marksman", "texlab", "html", "css_ls", "ts_ls", "jinja_lsp", "svelte",
+  "basedpyright", "ruff" });
+
+vim.lsp.config.luals = {
   capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
@@ -33,10 +35,10 @@ lspconfig.lua_ls.setup({
   settings = {
     Lua = {}
   }
-})
+}
 
 -- https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#configuration-overview
-lspconfig.nixd.setup({
+vim.lsp.config.nixd = {
   capabilities = capabilities,
   cmd = { "nixd" },
   settings = {
@@ -52,46 +54,48 @@ lspconfig.nixd.setup({
           expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.laptop.options',
         },
         home_manager = {
-          expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations."laptop".options.home-manager.users.type.getSubOptions []',
+          expr =
+          '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations."laptop".options.home-manager.users.type.getSubOptions []',
         },
       },
     },
   },
-})
+}
 
-lspconfig.clangd.setup({
+vim.lsp.config.clangd = {
   capabilities = capabilities,
-})
+}
 
-lspconfig.marksman.setup({
+vim.lsp.config.marksman = {
   capabilities = capabilities,
-})
-lspconfig.texlab.setup({
-  capabilities = capabilities,
-})
+}
 
-lspconfig.html.setup({
+vim.lsp.config.texlab = {
+  capabilities = capabilities,
+}
+
+vim.lsp.config.html = {
   capabilities = capabilities,
   filetypes = { "html", "templ", "jinja" },
-})
+}
 
-lspconfig.cssls.setup({
+vim.lsp.config.cssls = {
   capabilities = capabilities,
-})
+}
 
-lspconfig.ts_ls.setup({
+vim.lsp.config.ts_ls = {
   capabilities = capabilities,
-})
+}
 
-lspconfig.jinja_lsp.setup({
+vim.lsp.config.jinja_lsp = {
   capabilities = capabilities,
-})
+}
 
-lspconfig.svelte.setup({
+vim.lsp.config.svelte = {
   capabilities = capabilities,
-})
+}
 
-lspconfig.basedpyright.setup({
+vim.lsp.config.basedpyright = {
   capabilities = capabilities,
   settings = {
     basedpyright = {
@@ -103,8 +107,8 @@ lspconfig.basedpyright.setup({
       },
     }
   }
-})
+}
 
-lspconfig.ruff.setup({
+vim.lsp.config.ruff = {
   capabilities = capabilities,
-})
+}
