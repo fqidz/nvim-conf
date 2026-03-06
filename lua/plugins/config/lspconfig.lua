@@ -9,27 +9,36 @@ vim.keymap.set({ "n", "v" }, "<Leader>fa", function()
   vim.lsp.buf.format({ async = false })
 end)
 
-vim.lsp.enable({ "luals", "nixd", "clangd", "marksman", "texlab", "html", "css_ls", "ts_ls", "jinja_lsp", "svelte",
-  "basedpyright", "ruff" });
+vim.lsp.enable({ "lua_ls", "nixd", "clangd", "marksman", "texlab", "html", "css_ls", "ts_ls", "jinja_lsp", "svelte",
+  "basedpyright", "ruff", "tinymist", "jsonls" });
 
-vim.lsp.config.luals = {
+vim.lsp.config.lua_ls = {
   capabilities = capabilities,
   on_init = function(client)
-    local path = client.workspace_folders[1].name
-    if vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc') then
-      return
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if
+          path ~= vim.fn.stdpath('config')
+          and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+      then
+        return
+      end
     end
 
     client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
       runtime = {
-        version = 'LuaJIT'
+        version = 'LuaJIT',
+        path = {
+          'lua/?.lua',
+          'lua/?/init.lua',
+        },
       },
       workspace = {
         checkThirdParty = false,
         library = {
           vim.env.VIMRUNTIME
-        }
-      }
+        },
+      },
     })
   end,
   settings = {
@@ -47,7 +56,7 @@ vim.lsp.config.nixd = {
         expr = "import <nixpkgs> { }",
       },
       formatting = {
-        command = { "nix fmt" },
+        command = { "nixfmt" },
       },
       options = {
         nixos = {
@@ -110,5 +119,17 @@ vim.lsp.config.basedpyright = {
 }
 
 vim.lsp.config.ruff = {
+  capabilities = capabilities,
+}
+
+vim.lsp.config.tinymist = {
+  capabilities = capabilities,
+}
+
+vim.lsp.config.jsonls = {
+  capabilities = capabilities,
+}
+
+vim.lsp.config.css_ls = {
   capabilities = capabilities,
 }

@@ -10,10 +10,17 @@ local jdtls_config_dir =
 local config = {
   cmd = {
     vim.fn.exepath("jdtls"),
-    '-configuration', config_path,
-    '-data', workspace_dir
+    '-configuration', jdtls_config_dir,
+    '-data', jdtls_workspace_dir
   },
   root_dir = vim.fs.root(vim.api.nvim_buf_get_name(0), vim.lsp.config.jdtls.root_markers),
+  -- settings = {
+  --   java = {
+  --     settings = {
+  --       url = "/home/faidz/.config/nvim/rule/jdtls.prefs";
+  --     }
+  --   }
+  -- }
 }
 require('jdtls').start_or_attach(config)
 
