@@ -26,4 +26,7 @@ return {
   {
     "brenoprata10/nvim-highlight-colors",
   },
+  {
+    "mechatroner/rainbow_csv",
+  },
 }

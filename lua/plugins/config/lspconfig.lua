@@ -81,6 +81,14 @@ vim.lsp.config.marksman = {
 
 vim.lsp.config.texlab = {
   capabilities = capabilities,
+  settings = {
+    texlab = {
+      latexFormatter = "latexindent",
+      latexindent = {
+        ['local'] = vim.fn.stdpath('config') .. "/lua/plugins/config/latexindent-config.yaml"
+      },
+    },
+  },
 }
 
 vim.lsp.config.html = {

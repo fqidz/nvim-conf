@@ -1,16 +1,20 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    main = "nvim-treesitter.config",
     config = function()
       require("plugins.config.treesitter")
     end,
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
   },
   {
     "neovim/nvim-lspconfig",
-   lazy = false,
+    lazy = false,
     config = function()
       require("plugins.config.lspconfig")
     end,
@@ -62,7 +66,7 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    -- branch = "0.1.x",
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require("plugins.config.telescope")
@@ -126,4 +130,3 @@ return {
     end,
   },
 }
-

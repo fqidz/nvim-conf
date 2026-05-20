@@ -17,6 +17,7 @@ vim.opt.inccommand = "split"
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 12
 
 vim.opt.termguicolors = true
 
@@ -24,7 +25,10 @@ vim.opt.ignorecase = true
 
 vim.g.mapleader = " "
 
-vim.opt.signcolumn = "yes";
+vim.opt.signcolumn = "yes"
+
+vim.opt.list = true
+vim.opt.listchars = "tab:••,nbsp:+"
 
 vim.diagnostic.config({
   update_in_insert = true,
