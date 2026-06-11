@@ -34,7 +34,7 @@ vim.diagnostic.config({
   update_in_insert = true,
 })
 
-vim.filetype.add {
+vim.filetype.add ({
   extension = {
     jinja = "jinja",
     jinja2 = "jinja",
@@ -51,5 +51,7 @@ vim.filetype.add {
         end
       end
     end,
+    -- podman quadlet *.container file uses systemd syntax
+    container = "systemd",
   },
-}
+})
