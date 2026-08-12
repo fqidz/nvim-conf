@@ -57,6 +57,9 @@ local parsers = {
   "matlab",
   "dockerfile",
   "desktop",
+  "bash",
+  "sh",
+  "go",
 }
 
 treesitter.install(parsers)

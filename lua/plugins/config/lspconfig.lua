@@ -10,7 +10,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>fa", function()
 end)
 
 vim.lsp.enable({ "lua_ls", "nixd", "clangd", "marksman", "texlab", "html", "css_ls", "ts_ls", "jinja_lsp", "svelte",
-  "basedpyright", "ruff", "tinymist", "jsonls" });
+  "basedpyright", "ruff", "tinymist", "jsonls", "gopls" });
 
 vim.lsp.config.lua_ls = {
   capabilities = capabilities,
@@ -139,5 +139,9 @@ vim.lsp.config.jsonls = {
 }
 
 vim.lsp.config.css_ls = {
+  capabilities = capabilities,
+}
+
+vim.lsp.config.gopls = {
   capabilities = capabilities,
 }

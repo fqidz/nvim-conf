@@ -53,5 +53,6 @@ vim.filetype.add ({
     end,
     -- podman quadlet *.container file uses systemd syntax
     container = "systemd",
+    network = "systemd",
   },
 })
