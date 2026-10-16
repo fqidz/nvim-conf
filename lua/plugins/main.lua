@@ -129,4 +129,10 @@ return {
       require("plugins.config.typst-preview")
     end,
   },
+  {
+    "nvim-mini/mini.ai",
+    config = function()
+      require("plugins.config.mini-ai")
+    end,
+  },
 }
